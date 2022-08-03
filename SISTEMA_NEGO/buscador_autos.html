@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+<img src="https://superutil.mx/wp-content/uploads/2022/06/banner_buscador.png" style="width:600px;height:300px;transform: translate(20vw, 10px);">
+
+<body>
+
+    <h3>Elige tu vehículo para encontrar su funda correspondiente</h3>
+    <div class="hero">
+        <div class="buscador">
+            <form name="marcas" method="get">
+                <div class="grid-container">
+                    <div class="grid-item item1">
+
+                        <select name="marca" onchange="relation()">
+                  <option value="-" style:>Marca</option>
+                  <option value="vw">VW</option>
+                  <option value="nissan">Nissan</option>
+                  <option value="audi">Audi</option>
+                  <option value="bmw">BMW</option>
+                  <option value="buick">Buick</option>
+                  <option value="chevrolet">Chevrolet</option>
+                  <option value="chrysler">Chrysler</option>
+                  <option value="dodge">Dodge</option>
+                  <option value="fiat">Fiat</option>
+                  <option value="ford">Ford</option>
+                  <option value="gmc">GMC</option>
+                  <option value="honda">Honda</option>
+                  <option value="hyundai">Hyundai</option>
+                  <option value="jaguar">Jaguar</option>
+                  <option value="jeep">Jeep</option>
+                  <option value="kia">Kia</option>
+                  <option value="landrover">Landrover</option>
+                  <option value="lincoln">Lincoln</option>
+                  <option value="mazda">Mazda</option>
+                  <option value="mercedes">Mercedes</option>
+                  <option value="mitsubishi">Mitsubishi</option>
+                  <option value="peugeot">Peugeot</option>
+                  <option value="pontiac">Pontiac</option>
+                  <option value="renault">Renault</option>
+                  <option value="seat">Seat</option>
+                  <option value="suzuki">Suzuki</option>
+                  <option value="toyota">Toyota</option>
+                </select>
+                    </div>
+                    <div class="grid-item item2">
+                        <select name="modelo">
+                  <option value="modelo">Modelo</option>"
+                </select>
+                    </div>
+                    <div class="grid-item item3">
+                        <select name="ano">
+                  <option value="ano">Año</option>
+                </select>
+                    </div>
+                    <div class="grid-item item4">
+                        <button class="button1" id="send" onclick="btn()" type="submit">Buscar</button>
+
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+    <p>Si no encuentras tu vehículo, escríbenos para proporcionarte el enlace correspondiente</p>
+
+
+
+
+    <script>
+        //define the corresponding marcas
+        var option_vw = new Array("Selecciona", "Amarok", "Beetle", "Bora", "Cross-Fox", "Eurovan",
+            "Gol", "Golf", "Jetta", "Lupo", "Passat", "Pointer", "Polo", "Routan", "Saveiro", "Sharan",
+            "Sport-Van", "Tiguan", "Touareg", "Up", "Vento", "derby", "Vocho", "Combi")
+
+        var option_nissan = new Array("Selecciona", "Almera", "Altima", "Aprio", "Armada", "Frontier",
+            "Juke", "Kicks", "Leaf", "March", "Maxima", "Micra", "Murano", "Note", "NP300", "Pathfinder",
+            "Platina", "Quest", "Rogue", "Sentra", "Tiida", "Titan", "Tsuru", "V-drive", "Versa", "X-Terra", "X-Trail")
+
+        var option_audi = new Array("Selecciona", "A1", "A2", "A3", "A4", "A5", "A6", "Q3", "Q5", "Q7", "S3",
+            "S4", "S5", "S6", "S8", "A7", "A8", "TT", "R8", "e-tron",
+            "e-tron GT", "RS")
+
+        var option_bmw = new Array("Selecciona", "Serie 1", "Serie 2", "Serie 3", "Serie 4", "Serie 5",
+            "Serie 6", "X3", "X4", "X5", "X6", "X7", "X8", "i3", "i4",
+            "i5", "i6", "i7", "i8", "iX", "Z4", "M3", "M4", "M135i",
+            "M235i", "M340i")
+
+        var option_buick = new Array("Selecciona", "Enclave", "Encore", "Envision", "Lacrosse", "Regal",
+            "Riviera", "Verano", "Verano-GS", "GL6", "GL8", "Cascada",
+            "Excelle")
+
+        var option_chevrolet = new Array("Selecciona", "Astra", "Astro", "Avalanche", "Aveo", "Beat", "Blazer",
+            "Camaro", "Captiva", "Cavalier", "Colorado", "Corsa",
+            "Corvette", "Cruze", "Equinox", "Express-van", "HHR",
+            "Malibu", "Meriva", "Monte-Carlo", "Optra", "S-10",
+            "Silverado", "Sonic", "Spark", "Suburban", "Tahoe",
+            "Tornado", "Traverse", "Trax", "Uplander", "Venture")
+
+
+
+
+
+        var option_chrysler = new Array("Selecciona", "Model-200", "300-letter-series", "300M", "300-non-letter-series",
+            "Car-Airflow", "Alpine", "Aspen", "Avenger", "Charger", "Concorde", "Colt", "Conquest", "Daytona", "D-50", "Delta",
+            "Dynasty", "Executive", "Horizon", "Galant", "Hunter", "Imperial-Parade-Phaeton", "Intrepid", "L300-Express",
+            "Lancer", "Laser", "LHS", "Newport", "New-Yorker", "New-Yorker-Fifth-Avenue", "Prowler", "PT-Cruiser", "Regal",
+            "Plainsman", "Royal", "Sebring", "Stratus", "Sunbeam", "TC", "Touring", "Turbine", "Valiant", "Viper", "VIP", "Vogue",
+            "Voyager", "Wayfarer", "Ypsilon", "200", "Natrium", "Pronto-Cruizer", "Viper-GTS-R", "Java", "TEVan", "200C-EV",
+            "Valiant-Charger", "180", "Atlantic")
+
+        var option_dodge = new Array("Selecciona", "Attitude", "Avenger", "Caliber", "Caravan", "Grand-Caravan",
+            "Challenger", "Charger", "Dakota", "Dart", "Durango", "Journey", "Neon", "Nitro", "Pacifica",
+            "Ram", "Stratus", "Viper")
+
+        var option_fiat = new Array("Selecciona", "500", "Abarth", "Sporting", "Mobi", "Uno", "Panda",
+            "Palio", "Siena", "70", "124", "124-Spider", "125", "125-Mirafiori", "125-Centurión", "126",
+            "127", "128", "130", "131", "132", "133", "147", "242", "500C", "500e", "500L", "500X", "501", "502",
+            "503", "507", "508", "510", "512", "514", "515", "518", "522", "525", "600", "615", "850", "1100",
+            "1200", "Albea", "Argo", "Barchetta", "Croma1985")
+
+        var option_ford = new Array("Selecciona", "Contour", "Courier", "Eco-Sport", "Edge",
+            "Escape", "Excursion", "Explorer", "Fiesta", "Ikon", "Figo", "Focus", "F-Series",
+            "F-150", "lobo", "Mustang", "Ranger", "Windstar")
+
+        var option_gmc = new Array("Selecciona", "Acadia", "Canyon", "Envoy", "Savana", "Sierra", "Yukon")
+
+        var option_honda = new Array("Selecciona", "Accord", "City", "Civic", "Crosstour",
+            "CrV", "Element", "Fit", "Hrv", "Insight", "Odyssey", "Pilot", "Ridgeline")
+
+        var option_hyundai = new Array("Selecciona", "Accent", "Attitude", "Atos", "Elantra",
+            "Grand-i10", "Santa-fe", "Sonata", "Tucson", "Veloster", "Veracruz")
+
+        var option_jaguar = new Array("Selecciona", "XJ", "XJ-L", "F-Type", "XF", "XF-R")
+
+        var option_jeep = new Array("Selecciona", "Cherokee", "Commander", "Compass",
+            "Grand-Cherokee", "Liberty", "Patriot", "Wrangler")
+
+        var option_kia = new Array("Selecciona", "Forte", "Optima", "Rio", "Sedona", "Sorento", "Soul", "Sportage")
+
+        var option_landrover = new Array("Selecciona", "Lr4", "Lr3", "Range-Rovel", "Evoque", "Discovery")
+
+        var option_lincoln = new Array("Selecciona", "Navigator", "Aviator", "Mark", "Mkc",
+            "Mks", "Mkt", "Mkx", "Mkz", "Nautilius")
+
+        var option_mazda = new Array("Selecciona", "2", "3", "5", "6", "CX-3", "CX-5", "CX-7",
+            "CX-9", "MX-5Miata", "RX-8", "Tribute")
+
+        var option_mercedes = new Array("Selecciona", "300-Series", "C-Class", "E-Class",
+            "G-Class", "M-Class", "R-Class", "S-Class", "SL-Series", "Sprinter")
+
+        var option_mitsubishi = new Array("Selecciona", "Eclipse", "Endeavor", "Galant",
+            "Lancer", "L200", "Mirage", "Montero", "Outlander")
+
+        var option_peugeot = new Array("Selecciona", "207", "307", "308", "406", "206", "407", "408", "Partner")
+
+        var option_pontiac = new Array("Selecciona", "Aztek", "Bonneville", "G2", "G3", "G5",
+            "G6", "Grand-Prix", "Solstice", "Torrent")
+
+        var option_renault = new Array("Selecciona", "Duster", "Stepway", "Sandero",
+            "Laguna", "Clio", "Fluence", "Megane", "Scala")
+
+        var option_seat = new Array("Selecciona", "Arona", "Cordoba", "Ibiza", "Leon", "Tarraco", "Toledo", "Ateca")
+
+        var option_suzuki = new Array("Selecciona", "Swift", "lgnis", "Vitara", "Sx4", "Grand-vitara")
+
+        var option_toyota = new Array("Selecciona", "4Runner", "Avanza", "Avalon", "Camry",
+            "Corolla", "FJ-Cruiser", "Hilux", "Land-Cruiser", "Matrix", "Prius", "Rav4", "Sequoia",
+            "Sienna", "Tacoma", "Tundra", "Yaris")
+
+        //this will relate the marca with modelo
+        function relation() {
+            //define the variable that has all the options
+            var corresponding_car;
+            corresponding_car = document.marcas.marca[document.marcas.marca.selectedIndex].value;
+
+            //when the first option (which is Marca) is shown, then no other option will appear
+            if (corresponding_car != "-") {
+                //selecting the content of the options
+                marca_options = eval("option_" + corresponding_car);
+                //the length so we can fill up the other "selects"
+                option_length = marca_options.length;
+                ano_length = new Date().getFullYear() - new Date(1950, 1, 1).getFullYear();
+                document.marcas.modelo.length = option_length;
+                document.marcas.ano.length = ano_length;
+
+                //filling up the modelo select
+                for (i = 0; i < option_length; i++) {
+                    document.marcas.modelo.options[i].value = marca_options[i];
+                    document.marcas.modelo.options[i].text = marca_options[i];
+                }
+
+                //filling up the ano select
+                for (j = 0; j < ano_length; j++) {
+                    document.marcas.ano.options[j].value = new Date().getFullYear() + (-1 * j);
+                    document.marcas.ano.options[j].text = new Date().getFullYear() + (-1 * j);
+                }
+
+                //if the first select (marca) is with the text "Marca" then show nothing in the others
+            } else {
+                document.marcas.modelo.length = 1;
+                document.marcas.ano.length = 1;
+                document.marcas.modelo.options[0].value = "modelo";
+                document.marcas.modelo.options[0].text = "Modelo";
+                document.marcas.ano.options[0].value = "ano";
+                document.marcas.ano.options[0].text = "Año";
+            }
+
+            document.marcas.modelo.options[0].selected = true;
+            document.marcas.ano.options[0].selected = true;
+
+        }
+
+        function btn() {
+            document.querySelector("form[name=marcas]").addEventListener("submit", (e) => {
+                e.preventDefault(); // stop the normal form submit action
+
+                const data = new FormData(e.target); // capture all the fields
+                console.log(document.querySelector("form[name = marcas]").marca.value)
+                console.log(document.querySelector("form[name = marcas]").modelo.value)
+                console.log(document.querySelector("form[name = marcas]").ano.value)
+
+                const first_entry = document.querySelector("form[name = marcas]").marca.value + "-";
+                const second_entry = document.querySelector("form[name = marcas]").modelo.value + "-";
+                const third_entry = document.querySelector("form[name = marcas]").ano.value;
+
+
+                location.href = "https://superutilshop.mx/" + second_entry;
+            });
+        }
+    </script>
+
+</body>
+
+
+</html>

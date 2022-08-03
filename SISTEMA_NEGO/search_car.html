@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="buscador.css">
+</head>
+<!-- <img src="https://superutil.mx/wp-content/uploads/2022/06/banner_buscador.png" style="width:600px;height:300px;transform: translate(20vw, 10px);"> -->
+
+<body>
+
+    <div class="hero">
+        <div class="buscador">
+            <form name="marcas" method="get">
+                <div class="grid-container">
+                    <div class="grid-item item1">
+
+                        <select name="marca" onchange="relation()">
+                  <option value="-">Marca</option>
+                  <option value="vw">VW</option>
+                  <option value="nissan">Nissan</option>
+                  <option value="audi">Audi</option>
+                  <option value="bmw">BMW</option>
+                  <option value="buick">Buick</option>
+                  <option value="chevrolet">Chevrolet</option>
+                </select>
+                    </div>
+                    <div class="grid-item item2">
+                        <select name="modelo">
+                  <option value="modelo">Modelo</option>"
+                </select>
+                    </div>
+                    <div class="grid-item item3">
+                        <select name="ano">
+                  <option value="ano">Año</option>
+                </select>
+                    </div>
+                    <div class="grid-item item4">
+                        <button class="button1" id="send" onclick="btn()" type="submit">Buscar</button>
+
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+
+    <script src="cars.js"></script>
+
+</body>
+
+
+</html>
